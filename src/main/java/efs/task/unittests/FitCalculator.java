@@ -36,4 +36,6 @@ class FitCalculator {
         double bmi = weight / (height * height);
         return Math.round(bmi * 100) / 100.0;
     }
+
+
 }
