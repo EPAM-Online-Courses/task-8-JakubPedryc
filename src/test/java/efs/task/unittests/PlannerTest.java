@@ -21,7 +21,7 @@ class PlannerTest {
 
     @ParameterizedTest
     @EnumSource(ActivityLevel.class)
-    void calculateDailyCaloriesDemand_returnsCorrectCaloriesDemand(ActivityLevel activityLevel) {
+    void shouldReturnCorrectCalories_whenCalculateCaloriesDemandCalled(ActivityLevel activityLevel) {
         // Given
         int expectedCalories = TestConstants.CALORIES_ON_ACTIVITY_LEVEL.get(activityLevel);
 
@@ -33,7 +33,7 @@ class PlannerTest {
     }
 
     @Test
-    void calculateDailyIntake_returnsCorrectDailyIntake() {
+    void shouldReturnCorrectDailyIntake_whenCalculateDailyIntakeCalled() {
         // Given
         DailyIntake expectedDailyIntake = TestConstants.TEST_USER_DAILY_INTAKE;
 

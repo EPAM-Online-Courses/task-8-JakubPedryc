@@ -90,12 +90,13 @@ class FitCalculatorTest {
 
     @Test
     void shouldReturnUserWithWorstBMI() {
+        // Given
         List<User> userList = TestConstants.TEST_USERS_LIST;
 
-        // Znajdź użytkownika z najgorszym wynikiem BMI
+        // When
         User userWithWorstBMI = FitCalculator.findUserWithTheWorstBMI(userList);
 
-        // Sprawdź, czy znaleziony użytkownik ma oczekiwane wartości wagi i wzrostu
+        // Then
         assertNotNull(userWithWorstBMI);
         assertEquals(97.3, userWithWorstBMI.getWeight());
         assertEquals(1.79, userWithWorstBMI.getHeight());
@@ -103,24 +104,26 @@ class FitCalculatorTest {
 
     @Test
     void shouldReturnNullForEmptyUserList() {
+        // Given
         List<User> emptyUserList = Collections.emptyList();
 
-        // Znajdź użytkownika z najgorszym wynikiem BMI
+        // When
         User userWithWorstBMI = FitCalculator.findUserWithTheWorstBMI(emptyUserList);
 
-        // Sprawdź, czy metoda zwraca null dla pustej listy użytkowników
+        // Then
         assertNull(userWithWorstBMI);
     }
 
     @Test
     void shouldReturnExpectedBMIScoreForUserList() {
+        // Given
         List<User> userList = TestConstants.TEST_USERS_LIST;
         double[] expectedBMIScores = TestConstants.TEST_USERS_BMI_SCORE;
 
-        // Oblicz wyniki BMI dla listy użytkowników
+        // When
         double[] calculatedBMIScores = FitCalculator.calculateBMIScore(userList);
 
-        // Sprawdź, czy obliczone wyniki BMI są zgodne z oczekiwanymi
+        // Then
         assertArrayEquals(expectedBMIScores, calculatedBMIScores, 0.01);
     }
 
